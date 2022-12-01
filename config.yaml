@@ -1,0 +1,8 @@
+port: 8080
+rpcURL: https://cloudflare-eth.com
+ticker: 30s
+tokenAddress:
+tokenMintBlockNumber:
+excludedAddresses:
+delegatorPool:
+nodeOperatorAddresses:
