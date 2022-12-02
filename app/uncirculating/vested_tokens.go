@@ -61,5 +61,8 @@ func (s *VestedTokens) Uncirculating() (*big.Int, error) {
 		totalWithdrawn = new(big.Int).Add(totalWithdrawn, event.Amount)
 	}
 
+	if totalWithdrawn.Cmp(totalVested) == 1 {
+		return big.NewInt(0), nil
+	}
 	return new(big.Int).Sub(totalVested, totalWithdrawn), nil
 }
