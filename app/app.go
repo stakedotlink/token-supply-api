@@ -89,7 +89,9 @@ func (t *TokenSupply) tick() error {
 		return err
 	}
 	t.totalSupply = totalSupply
-	circulatingSupply := totalSupply
+
+	circulatingSupply := new(big.Int)
+	circulatingSupply.Set(totalSupply)
 	for _, p := range t.Uncirculating {
 		uncirculating, err := p.Uncirculating()
 		if err != nil {

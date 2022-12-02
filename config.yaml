@@ -1,8 +1,13 @@
 port: 8080
-rpcURL: https://cloudflare-eth.com
+rpcURL: http://localhost:8545
 ticker: 30s
-tokenAddress:
-tokenMintBlockNumber:
+tokenAddress: 0x9b057dB7e0e165a2B3FdF7d28B6A84F1c9338838
 excludedAddresses:
-delegatorPool:
+  - 0x11187eff852069a33d102476b2E8A9cc9167dAde
+delegatorPool: 0xE90240992c7E35a32Ba65803Ca47082C0fDd6108
 nodeOperatorAddresses:
+  - 0x11187eff852069a33d102476b2E8A9cc9167dAde
+  - 0x2228bdc8584595DfefA75597C96B13c00a2D88C2
+  - 0x33375555d73620FefD26cD083c425759a259FA18
+  - 0x444485D3d01447da706550B1c10362676193CAd0
+  - 0x555f27995D7BB56c989d7C1cA4e5e03e930ecA67
