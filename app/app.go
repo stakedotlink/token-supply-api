@@ -7,9 +7,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/params"
+	"github.com/stakedotlink/token-supply-api/abi"
 	"math/big"
 	"time"
-	"token-supply-api/abi"
 )
 
 var ctx = context.Background()

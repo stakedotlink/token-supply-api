@@ -1,4 +1,4 @@
-module token-supply-api
+module github.com/stakedotlink/token-supply-api
 
 go 1.19
 

@@ -3,13 +3,13 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/stakedotlink/token-supply-api/app"
+	"github.com/stakedotlink/token-supply-api/app/uncirculating"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
-	"token-supply-api/app"
-	"token-supply-api/app/uncirculating"
 )
 
 func main() {
