@@ -2,10 +2,11 @@ package uncirculating
 
 import (
 	"context"
+	"math/big"
+
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/stakedotlink/token-supply-api/app"
-	"math/big"
 )
 
 // ExcludedAddresses calculates uncirculating tokens by excluding balances of specified addresses
@@ -30,5 +31,6 @@ func (e *ExcludedAddresses) Uncirculating() (*big.Int, error) {
 		}
 		totalBalance = totalBalance.Add(totalBalance, balance)
 	}
+
 	return totalBalance, nil
 }
