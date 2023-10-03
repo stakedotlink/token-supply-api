@@ -3,13 +3,14 @@ package app
 import (
 	"context"
 	"fmt"
+	"math/big"
+	"time"
+
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/stakedotlink/token-supply-api/abi"
-	"math/big"
-	"time"
 )
 
 var ctx = context.Background()
@@ -51,6 +52,7 @@ func NewTokenSupply(configPath string, uncirculating ...Uncirculating) (*TokenSu
 	if err != nil {
 		return nil, fmt.Errorf("couldn't instantiate erc20: %v", err)
 	}
+
 	return &TokenSupply{Config: cfg, ETHClient: ethClient, ERC20: erc20, tickInterval: duration, totalSupply: big.NewInt(0), circulatingSupply: big.NewInt(0), Uncirculating: uncirculating}, nil
 }
 

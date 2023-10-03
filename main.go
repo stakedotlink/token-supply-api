@@ -3,20 +3,21 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/stakedotlink/token-supply-api/app"
-	"github.com/stakedotlink/token-supply-api/app/uncirculating"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/stakedotlink/token-supply-api/app"
+	"github.com/stakedotlink/token-supply-api/app/uncirculating"
 )
 
 func main() {
 	var configPath string
 	flag.StringVar(&configPath, "config", "config.yaml", "config file path")
 
-	a, err := app.NewTokenSupply(configPath, &uncirculating.ExcludedAddresses{}, &uncirculating.VestedTokens{})
+	a, err := app.NewTokenSupply(configPath, &uncirculating.ExcludedAddresses{}, &uncirculating.VestedTokens{}, &uncirculating.LockedTokens{})
 	if err != nil {
 		log.Fatal(err)
 	}
