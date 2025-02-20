@@ -3,6 +3,7 @@ package app
 import (
 	"context"
 	"fmt"
+	"log"
 	"math/big"
 	"time"
 
@@ -63,6 +64,7 @@ func (t *TokenSupply) Start() error {
 			return err
 		}
 	}
+	log.Printf("Starting API, calculating tokenomics")
 	if err := t.tick(); err != nil {
 		return err
 	}

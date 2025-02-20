@@ -17,7 +17,7 @@ func main() {
 	var configPath string
 	flag.StringVar(&configPath, "config", "config.yaml", "config file path")
 
-	a, err := app.NewTokenSupply(configPath, &uncirculating.ExcludedAddresses{}, &uncirculating.VestedTokens{}, &uncirculating.LockedTokens{})
+	a, err := app.NewTokenSupply(configPath, &uncirculating.ExcludedAddresses{}, &uncirculating.VestedTokens{})
 	if err != nil {
 		log.Fatal(err)
 	}
